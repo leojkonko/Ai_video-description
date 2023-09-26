@@ -6,3 +6,27 @@ GET http://localhost:3333/prompts
 
 # @name get-prompts
 GET http://localhost:3333/prompts
+
+###
+
+# @name upload-videos
+post http://localhost:3333/videos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="fila"; filename="example.mp3"
+Content-Type: image/png
+
+< ./example.mp3
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name transcription-route
+post http://localhost:3333/videos/6366b1e8-fcad-409e-a53a-a0dbcb7bc093/transcription
+
+Content-Type: application/json
+
+{
+    "prompt": "tela, ricardo"
+}
