@@ -27,7 +27,7 @@
     }
   },
 
-  "include": ["src"],
+  "include": ["src", "src/components/video-input-form.tsx"],
   "references": [{
     "path": "./tsconfig.node.json"
   }]

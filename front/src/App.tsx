@@ -6,6 +6,7 @@ import { Textarea } from "./components/ui/textarea";
 import { Label } from "./components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select";
 import { Slider } from "./components/ui/slider";
+import { VideoInputForm } from "./components/video-input-form";
 
 export function App() {
 
@@ -35,31 +36,14 @@ export function App() {
           <p className="text-sm text-muted-foreground">Lembre-se: você pode utilizar a variável <code className="text-violet-400">{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado</p>
         </div>
         <aside className="w-80 space-y-6">
-          <form className="space-y-6 w-full" action="">
-            <label htmlFor="video" 
-            className="cursor-pointer border w-full flex rounded-md aspect-video border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5">
-              <FileVideo className="w-4 h-4" />
-              Selecione um vídeo
-            </label>
-            <input type="file" id="video" accept="video/mp4" className="sr-only" />
-
-            <Separator />
-
-            <div className="space-y-2">
-              <Label htmlFor="transcription-prompt">Prompt de transcrição</Label>
-              <Textarea id="transcription-prompt" className="h-20 resize-none leading-relaxed" placeholder="Inclua palavras chave mencionadas no vídeo separadas por vírgula (,)" />
-            </div>
-            <Button type="submit" className="w-full">Carregar Vídeo
-              <Upload className="h-4w-4 ml-2" />
-            </Button>
-          </form>
+          <VideoInputForm />
           <Separator />
           <form action="" className="space-y-6">
             <div className="space-y-2">
               <Label>Prompt</Label>
               <Select>
                 <SelectTrigger>
-                  <SelectValue placeholderSelecione um prompt />
+                  <SelectValue placeholder="Selecione um prompt" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="title">Título do Youtube</SelectItem>
